@@ -1,0 +1,31 @@
+// Variables
+
+
+
+
+
+
+
+
+
+// Mixins
+
+@mixin keyframes($name, $from, $to) {
+  @-webkit-keyframes $name {
+    @content;
+    from{height: $from};
+    to{height: $to};
+  }
+  @-moz-keyframes $name {
+    @content;
+    from{height: $from};
+    to{height: $to};
+  }
+  @keyframes $name {
+    @content;
+    from{height: $from};
+    to{height: $to};
+  }
+}
+
+

@@ -1,76 +1,229 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  	<link href='http://fonts.googleapis.com/css?family=PT+Serif' rel='stylesheet' type='text/css'>
-	  <link href='http://fonts.googleapis.com/css?family=Raleway:500,700,800' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" type="text/css" href="css/application.css">
-	  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-  </head>
-  <body>
-	  <header>
-	  	<div class="container">
-	    	<a href="#"><img class="logo" src="wobegon-logo.png"></a>
-	    	<nav class="login-reg"><a href="#">Login</a> | <a href="#">Register</a></nav>
-	    </div>
-    </header>
-	  <main>
-	  	<figure class="hero-img">
-	  		<img src="bwphoto_v1.jpg">
-	    </figure>
-	    <article class="main-welcome">
-        <h1 class="main-welcome-heading">LET US HELP YOU.</h1>
-	      <p>Tofu Vice gentrify you probably haven't heard of them. Selvage single-origin coffee letterpress Vice.</p>
-	      <a href="#" class="btn" id="report">Report Vandalism</a>
-	      <a href="#" class="btn" id="chat">Emergency Chat</a>
-	  	</article>
-	  	<div class="triangle-up"></div>
-	    <section class="explanation">
-		    <article class="reporting-info container">
-		    	<h1 class="info-header">HOW REPORTING VANDALISM WORKS</h1>
-		    	<section class="info-bit offset-by-two four columns">
-		    		<h1 class="info-bit-text">Describe the Incident</h1>
-		    		<p>Tofu Vice gentrify you probably haven&#39;t heard of them. Selvage single-origin coffee letterpress Vice.</p>
-		    	</section>
-		    	<section class="info-bit four columns">
-		    		<h1 class="info-bit-text">Capture the Incident</h1>
-		    		<p>Tofu Vice gentrify you probably haven&#39;t heard of them. Selvage single-origin coffee letterpress Vice. Tofu Vice gentrify you probably haven&#39;t heard of them.</p>
-		    	</section>
-		    	<section class="info-bit four columns">
-		    		<h1 class="info-bit-text">Schedule Estimation</h1>
-		    		<p>Tofu Vice gentrify you probably haven&#39;t heard of them. Selvage single-origin coffee letterpress Vice.</p>
-		    	</section>
-		    </article>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Glimpse: To Inspire & Be Inspired</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="stylesheet" href="stcss/style.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
-		    <article class="chat-info hide-info container">
-		    	<h1 class="info-header">HOW EMERGENCY CHAT WORKS</h1>
-		    	<section class="info-bit offset-by-four four columns">
-		    		<h1 class="info-bit-text">Interact with a live operator</h1>
-		    		<p>Tofu Vice gentrify you probably haven&#39;t heard of them. Selvage single-origin coffee letterpress Vice.</p>
-		    	</section>
-		    	<section class="info-bit four columns">
-		    		<h1 class="info-bit-text">Tell us about your situation</h1>
-		    		<p>Tofu Vice gentrify you probably haven&#39;t heard of them. Selvage single-origin coffee letterpress Vice.</p>
-		    	</section>
-		    </article>
-		  </section>
-	  </main>
-	  <footer>
-	  	<a class="icon-twitter" href="twitter.com/wobegon">Twitter</a>
-	  	<p>&copy;2014 Wobegon</p>
-	  </footer>
+        <!-- Import Google Fonts -->
+        <link href='http://fonts.googleapis.com/css?family=Lato|Lobster' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
 
-   <script>
-   	$("#report").hover(function(){
-   		$(".reporting-info").removeClass("hide-info")
-   		$(".chat-info").addClass("hide-info")
-   		$(".triangle-up").removeClass("triangle-chat")
-   	});
+        <header>
+          <div class="container">
+            <h1><a class="logo three columns" href="#" role="logo">
+              Glimpse
+            </a></h1>
 
-   	$("#chat").hover(function(){
-   		$(".chat-info").removeClass("hide-info")
-   		$(".reporting-info").addClass("hide-info")
-   		$(".triangle-up").addClass("triangle-chat")
-   	});
- 	 </script>
-  </body>
+            <a id="cam-toggle" class="test" href="#"><span class="icon-camera" hidden>&nbsp;</span></a>
+          </div>
+        </header>
+
+        <!-- CANVAS -->
+        <div id="cam-js" class="camera">
+          <!-- VIDEO -->
+          <video id="video" width="514" height="514" autoplay></video>
+          <!-- BUTTON -->
+          <button id="button" ><span class="icon-camera">&nbsp;</span></button>
+        </div>
+
+        <!-- WELCOME -->
+        <section id="welcome" class="container">
+          <h1 class="title">
+            Welcome to Glimpse
+          </h1>
+          <p class="offset-by-two twelve columns">
+            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness.
+          </p>
+          <!-- TAKE PHOTO -->
+          <button id="open-cam" class="enable-camera"><span class="icon-camera">&nbsp;</span>Take Photo</button>
+          <!-- BROWSE -->
+          <button class="hide-modal">Skip to Browse</button>
+          <menu class="hide-modal icon-circle-cross"></menu>
+        </section>
+
+        <!-- START FLOW -->
+        <main id="main" class="content">
+          <figure class="content-image">
+            <img src="images/image_02.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_03.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_04.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_05.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_06.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_07.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_08.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_09.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_10.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_11.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_12.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_13.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_14.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_15.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_16.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_17.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_18.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_19.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_20.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_21.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_22.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_23.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_24.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_25.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_26.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_27.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_28.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_29.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_30.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_31.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_32.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_33.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_34.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_35.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_36.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_37.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_38.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_39.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_40.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_41.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_42.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_43.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_44.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_45.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_46.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_47.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_48.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_49.jpg">
+          </figure>
+          <figure class="content-image">
+            <img src="images/image_50.jpg">
+          </figure>
+        </main>
+
+          <footer>
+            &copy; Glimpse 2014
+            <ul>
+              <li><a class="twit-icon" href="">Twitter</a></li>
+              <li><a class="git-icon" href="">Github</a></li>
+            </ul>
+          </footer>
+
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+          $(document).ready(function(){
+            $('.`test`').click(function(){
+              $( '.camera' ).toggleClass( 'show' );
+            });
+          });
+        </script>
+
+        <script src="js/camera.js"></script>
+
+    </body>
 </html>
