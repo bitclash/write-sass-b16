@@ -1,0 +1,80 @@
+// * Skeleton V1.2
+// * Copyright 2011, Dave Gamache
+// * www.getskeleton.com
+// * Free to use under the MIT license.
+// * http://www.opensource.org/licenses/mit-license.php
+// * 6/20/2012
+
+// #Page Styles
+
+main
+	background-color: #343434
+	width: 100%
+
+body
+	background-color: #343434
+
+img
+	width: 100%
+	height: auto
+
+.content
+	display: -webkit-inline-flex
+	display: -ms-inline-flexbox
+	display: inline-flex
+	-webkit-flex-wrap: wrap
+	-ms-flex-wrap: wrap
+	flex-wrap: wrap
+
+.content-image
+	overflow: hidden
+
+.test
+	display: inline-block
+	margin-left: 28%
+
+// #Media Queries
+
+// Smaller than standard 960 (devices and browsers) */
+@media only screen
+	.content-image
+		width: 16.667%
+		height: 16.667%
+
+
+// Tablet Portrait size to standard 960 (devices and browsers)
+@media only screen and (min-width: 768px) and (max-width: 959px)
+	.content-image
+		width: 20%
+		height: 20%
+
+// All Mobile Sizes (devices and browser)
+@media only screen and (max-width: 767px)
+	.content-image
+		width: 33.333%
+		height: 33.333%
+
+	header div.container
+		margin: 0
+		padding: 0
+
+	header div.container a
+		margin: 0
+		padding: 0
+
+	.test
+		display: inline
+		margin: 0
+
+	main
+		margin-top: 20%
+
+	footer
+		width: 100%
+		background-color: #343434
+		text-align: center
+		padding: 10px
+		bottom: 0
+		height: 5%
+		position: absolute
+		color: #FFFFFF
